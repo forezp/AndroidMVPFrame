@@ -2,6 +2,7 @@ package com.example.androidmvpframe;
 
 import java.security.MessageDigest;
 
+import com.example.androidmvpframe.model.bean.User;
 import com.example.androidmvpframe.presenter.UserPresenter;
 import com.example.androidmvpframe.view.IUserLoginView;
 
@@ -40,8 +41,9 @@ public class MainActivity extends Activity implements IUserLoginView{
     }
     
     @Override
-    public void onUserLoginSuccess() {
-        Toast.makeText(mContext, "登录成功", Toast.LENGTH_SHORT).show();
+    public void onUserLoginSuccess(User user) {
+        
+        Toast.makeText(mContext, "登录成功:"+user.toString(), Toast.LENGTH_SHORT).show();
         
     }
     @Override

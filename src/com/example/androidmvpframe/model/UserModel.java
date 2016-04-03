@@ -2,6 +2,7 @@ package com.example.androidmvpframe.model;
 
 import org.json.JSONObject;
 
+import com.example.androidmvpframe.model.bean.User;
 import com.example.androidmvpframe.model.handler.LoginHandler;
 
 import net.tsz.afinal.FinalHttp;
@@ -69,9 +70,11 @@ public class UserModel implements IUserModel{
                     } else {                                                                        // 登录成功
                         JSONObject msgBody = response.getJSONObject("body");
                         //在这里可以调用SharedPrefernce存储在本地。
-                                                                                 // 本地化用户数据
+                        User user=new User();  
+                        user.setId(msgBody.getInt("id"));
+                        // 本地化用户数据
                         if (handler != null)
-                            handler.onLoginSuccess();
+                            handler.onLoginSuccess(user);
 
                     }
                        

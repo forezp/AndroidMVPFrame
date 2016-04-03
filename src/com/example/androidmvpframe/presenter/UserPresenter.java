@@ -4,6 +4,7 @@ import android.support.annotation.Nullable;
 
 import com.example.androidmvpframe.model.IUserModel;
 import com.example.androidmvpframe.model.UserModel;
+import com.example.androidmvpframe.model.bean.User;
 import com.example.androidmvpframe.model.handler.LoginHandler;
 import com.example.androidmvpframe.view.IUserLoginView;
 import com.example.androidmvpframe.view.IUserView;
@@ -37,9 +38,9 @@ public class UserPresenter {
             }
             
             @Override
-            public void onLoginSuccess() {
+            public void onLoginSuccess(User user) {
                 if (mView != null && mView instanceof IUserLoginView)
-                    ((IUserLoginView) mView).onUserLoginSuccess();
+                    ((IUserLoginView) mView).onUserLoginSuccess(user);
                 
             }
             
