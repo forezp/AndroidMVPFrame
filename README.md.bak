@@ -181,7 +181,7 @@ public class MainActivity extends Activity implements IUserLoginView{
     @Override
     public void onUserLoginSuccess(User user) {
         
-        Toast.makeText(mContext, ""+user.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(mContext, "ж╠???3иж1|:"+user.toString(), Toast.LENGTH_SHORT).show();
         
     }
     @Override
@@ -194,7 +194,7 @@ public class MainActivity extends Activity implements IUserLoginView{
         try {
             MessageDigest md5 = MessageDigest.getInstance("MD5");
             md5.update(plain.getBytes("UTF-8"));
-            byte[] m = md5.digest();
+            byte[] m = md5.digest();//?ио?и╣
             StringBuilder hex = new StringBuilder(m.length * 2);
             for (byte b : m) {
                 if ((b & 0xFF) < 0x10) hex.append("0");
